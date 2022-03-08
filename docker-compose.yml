@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  web:
+    build: ./web/
+    container_name : web
+    ports:
+     - 8080:80
+    volumes:
+     - ./web/:/var/www/html/
+    networks:
+     - homework5
+    depends_on:
+     - mariadb       
+  mariadb:
+    build: ./db/
+    container_name: database
+    networks:
+     - homework5
+    environment:
+     MYSQL_ROOT_PASSWORD: 12345
+
+networks:
+    homework5:
