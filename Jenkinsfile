@@ -12,7 +12,7 @@ pipeline {
     stage('Downloading source') {
       steps {
         sh 'rm -rf ./*'
-        sh 'git clone http://192.168.100.6:3000/ddervenkov/homework5.git'
+        sh 'git clone https://github.com/ddervenkov/homework5.git'
       }
     }
 
